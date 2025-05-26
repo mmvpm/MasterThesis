@@ -1,0 +1,145 @@
+\documentclass[a4paper,article,14pt]{extarticle}
+
+\usepackage{spbudiploma}
+\usepackage{euscript}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage{textcomp}
+\usepackage[inkscapeformat=png]{svg}
+\usepackage{minted} % требует параметра -shell-escape
+\usepackage[ruled]{algorithm2e}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+
+\renewcommand{\theFancyVerbLine}{\sffamily{\small \oldstylenums{\arabic{FancyVerbLine}}}}
+
+\newenvironment{code}[1]{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[linenos,baselinestretch=1,style=abap]{#1}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newenvironment{codenl}[1]{ % no lines
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[style=abap]{#1}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newenvironment{zerocode}[1]{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[baselinestretch=1,style=abap]{#1}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newenvironment{nocode}{
+  \VerbatimEnvironment
+  \begin{minipage}{3cm}
+  \vspace*{+1em}
+  \begin{minted}[baselinestretch=1]{yaml}}{
+  \end{minted}
+  \vspace*{+0.3em}
+  \end{minipage}
+}
+
+\newcommand{\var}[1]{$\mathtt{#1}$}
+
+\begin{document}
+
+\input{titlepage.tex}
+
+\tableofcontents
+\pagebreak
+
+\include{items/_intro}
+\include{items/_problem}
+\include{items/chap1}
+\include{items/chap2}
+\include{items/chap3}
+\include{items/chap4}
+\include{items/concl}
+
+\begin{thebibliography}{1}
+
+\bibitem{msa-overview} Fowler, M., Lewis, J. Microservices: A Definition of This New Architectural Term. Martin Fowler Blog, 2014. URL: \url{https://martinfowler.com/articles/microservices.html} (дата обр. 19.04.2025).
+
+\bibitem{microservices-patterns} Richardson, C. Microservices Patterns. Manning Publications, 2018.
+
+\bibitem{arch-debt} Brown, N., Cai, Y., Guo, Y., Kazman, R. Managing Technical Debt in Software-Reliant Systems. In Proceedings of the FSE/SDP Workshop on Future of Software Engineering Research (FoSER '10), 2010, pp. 47–52.
+
+\bibitem{iac-concept} Morris, K. Infrastructure as Code: Managing Servers in the Cloud. O'Reilly Media, 2016.
+
+\bibitem{acl-pattern} Evans, E. Domain-Driven Design: Tackling Complexity in the Heart of Software. Addison-Wesley Professional, 2003.
+
+\bibitem{antipatterns-taxonomy} Taibi, D., Lenarduzzi, V., Pahl, C. Microservices Anti-Patterns: A Taxonomy. Microservices - Science and Engineering. Springer. 2019.
+
+\bibitem{dsl-fowler} Fowler, M. Domain-Specific Languages. Addison-Wesley Professional, 2010.
+
+\bibitem{antipattern-def} Brown, W. J., Malveau, R. C., McCormick, H. W., Mowbray, T. J. AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis. John Wiley \& Sons, 1998.
+
+\bibitem{shared-db-ap} Richards, M. Software Architecture Patterns. O'Reilly Media, 2015.
+
+\bibitem{data-encapsulation-msa} Wolff, E. Microservices: Flexible Software Architecture. Addison-Wesley Professional, 2016.
+
+\bibitem{lava-flow-ap} Contieri, M. Lava Flow. In Proceedings of the 21st Conference on Pattern Languages of Programs (PLoP '14), 2014, Article No. 9.
+
+\bibitem{archunit-site} ArchUnit. Official Website. URL: \url{https://www.archunit.org/} (дата обр. 20.04.2025).
+
+\bibitem{sonargraph-tool} SonarSource. SonarGraph Documentation. URL: \url{https://docs.sonarsource.com/sonarqube-server/latest/} (дата обр. 20.04.2025).
+
+\bibitem{structure101-tool} Structure101. Official Website. URL: \url{https://structure101.com/} (дата обр. 20.04.2025).
+
+\bibitem{archdays-talk-aac} Сафин, Р. "Раз архитектура — <<as Code>>, почему бы её не покрыть тестами?". ArchDays Conference, 2023. URL: \url{https://github.com/Byndyusoft/aact/} (дата обр. 25.04.2025).
+
+\bibitem{k8s-manifests} Objects In Kubernetes. \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/} (дата обр. 25.05.2025).
+
+\bibitem{ansible} Ansible community documentation. \url{https://docs.ansible.com/} (дата обр. 25.05.2025).
+
+\bibitem{terraform} Terraform by HashiCorp. Official Website. URL: \url{https://www.terraform.io/} (дата обр. 27.04.2025).
+
+\bibitem{plantuml-tool} PlantUML. Official Website. URL: \url{https://plantuml.com/} (дата обр. 26.04.2025).
+
+\bibitem{mermaid-tool} Mermaid. Official Website. URL: \url{https://mermaid.js.org/} (дата обр. 26.04.2025).
+
+\bibitem{iac-principles} Humble, J., Farley, D. Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation. Addison-Wesley Professional, 2010.
+
+\bibitem{istio-mesh} Istio. Official Website. URL: \url{https://istio.io/} (дата обр. 27.04.2025).
+
+\bibitem{grpc-fw} gRPC. Official Website. URL: \url{https://grpc.io/} (дата обр. 03.05.2025).
+
+\bibitem{trunk-based-dev} Trunk Based Development. URL: \url{https://trunkbaseddevelopment.com/} (дата обр. 03.05.2025).
+
+\bibitem{arcadia} Arc — система контроля версий для монорепозитория. \url{https://habr.com/ru/companies/yandex/articles/482926/} (дата обр. 25.05.2025).
+
+\bibitem{scalatest-fw} ScalaTest. Official Website. URL: \url{http://www.scalatest.org/} (дата обр. 03.05.2025).
+
+\bibitem{yaml-spec} YAML Ain't Markup Language. Specification. URL: \url{https://yaml.org/spec/1.2/spec.html} (дата обр. 03.05.2025).
+
+\bibitem{yandex-eda-ms-count} Yandex Go Tech. От монолита до микросервисов: как менялась архитектура Яндекс Еды. Блог Yandex Go Tech, 2024. URL: \url{https://dev.go.yandex/blog/from-monolith-to-microservices-2024-03-12} (дата обр. 17.05.2025).
+
+\bibitem{cyclic-dep-ap} Farsi1, H., Allaki1, D., En-Nouaary1, A., Dahchour, M. An Iterative Approach for Detecting and Resolving Cyclic Dependencies AntiPattern in Microservices Architectures, 2025.
+
+\bibitem{api-gateway-pattern} Pattern: API Gateway. \url{https://microservices.io/patterns/apigateway.html} (дата обр. 18.05.2025).
+
+\bibitem{distr-monolith-ap} Microservices Antipattern: The Distributed Monolith. URL: \url{https://mehmetozkaya.medium.com/microservices-antipattern-the-distributed-monolith-%EF%B8%8F-46d12281b3c2} (дата обр. 18.05.2025).
+
+\end{thebibliography}
+
+\include{items/p_app}
+
+\end{document}
