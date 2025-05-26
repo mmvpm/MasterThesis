@@ -8,5 +8,5 @@
 * `items/` &mdash; каталог с основными главами
 * `spbudiploma.sty` &mdash; стилевой файл
 * `thesis-main.tex` &mdash; основной файл
-* `thesis.pdf` &mdash; скомпилированный pdf файл
+* `master-thesis.pdf` &mdash; скомпилированный pdf файл
 * `titlepage.tex` &mdash; титульный лист
